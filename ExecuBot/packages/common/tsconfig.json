@@ -1,5 +1,5 @@
 {
-  "extends": "@saasfly/typescript-config/base.json",
+  "extends": "@Saasfly/typescript-config/base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   },

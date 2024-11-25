@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-import { authOptions, getCurrentUser } from "@saasfly/auth";
+import { authOptions, getCurrentUser } from "@Saasfly/auth";
 
 import { DashboardHeader } from "~/components/header";
 import { DashboardShell } from "~/components/shell";

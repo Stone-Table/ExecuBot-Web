@@ -11,7 +11,7 @@ import {
   Text,
 } from "@react-email/components";
 
-import * as Icons from "@saasfly/ui/icons";
+import * as Icons from "@Saasfly/ui/icons";
 
 interface MagicLinkEmailProps {
   actionUrl: string;
@@ -29,37 +29,33 @@ export const MagicLinkEmail = ({
   <Html>
     <Head />
     <Preview>
-      Click to {mailType === "login" ? "sign in" : "activate"} your {siteName}{" "}
-      account.
+      {mailType === "login" ? "Access your" : "Welcome to"} Saasfly Executive Dashboard
     </Preview>
     <Tailwind>
       <Body className="bg-white font-sans">
         <Container className="mx-auto py-5 pb-12">
           <Icons.Logo className="m-auto block h-10 w-10" />
-          <Text className="text-base">Hi {firstName},</Text>
+          <Text className="text-base">Hello {firstName},</Text>
           <Text className="text-base">
-            Welcome to {siteName} ! Click the link below to{" "}
-            {mailType === "login" ? "sign in to" : "activate"} your account.
+            {mailType === "login" 
+              ? "Access your Saasfly executive dashboard to view your latest team performance metrics." 
+              : "Welcome to Saasfly! We're excited to help you gain deeper insights into your engineering team's performance."}
           </Text>
           <Section className="my-5 text-center">
             <Button
-              className="inline-block rounded-md bg-zinc-900 px-4 py-2 text-base text-white no-underline"
+              className="inline-block rounded-md bg-blue-600 px-4 py-2 text-base text-white no-underline"
               href={actionUrl}
             >
-              {mailType === "login" ? "Sign in" : "Activate Account"}
+              {mailType === "login" ? "Access Dashboard" : "Activate Account"}
             </Button>
           </Section>
           <Text className="text-base">
-            This link expires in 24 hours and can only be used once.
+            This secure link expires in 24 hours and can only be used once.
           </Text>
-          {mailType === "login" ? (
-            <Text className="text-base">
-              If you did not try to log into your account, you can safely ignore
-              it.
-            </Text>
-          ) : null}
           <Hr className="my-4 border-t-2 border-gray-300" />
-          <Text className="text-sm text-gray-600">saasfly.io</Text>
+          <Text className="text-sm text-gray-600">
+            Saasfly - AI-Powered Executive Intelligence
+          </Text>
         </Container>
       </Body>
     </Tailwind>

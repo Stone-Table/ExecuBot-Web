@@ -1,6 +1,6 @@
 import type * as Lucide from "lucide-react";
 
-import type { Customer } from "@saasfly/db";
+import type { Customer } from "@Saasfly/db";
 
 export interface NavItem {
   title: string;

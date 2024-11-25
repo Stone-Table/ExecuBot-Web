@@ -3,8 +3,8 @@
 import Link from "next/link";
 import type { User } from "next-auth";
 
-import { cn } from "@saasfly/ui";
-import { Button, buttonVariants } from "@saasfly/ui/button";
+import { cn } from "@Saasfly/ui";
+import { Button, buttonVariants } from "@Saasfly/ui/button";
 
 import { LocaleChange } from "~/components/locale-change";
 import useScroll from "~/hooks/use-scroll";

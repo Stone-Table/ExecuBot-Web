@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { WobbleCard } from "@saasfly/ui/wobble-card";
+import { WobbleCard } from "@Saasfly/ui/wobble-card";
 
 export function WobbleCardShow() {
   return (

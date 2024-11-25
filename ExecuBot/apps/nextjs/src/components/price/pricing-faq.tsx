@@ -5,7 +5,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@saasfly/ui/accordion";
+} from "@Saasfly/ui/accordion";
 
 import type { Locale } from "~/config/i18n-config";
 import { priceFaqDataMap } from "~/config/price/price-faq-data";

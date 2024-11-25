@@ -3,8 +3,8 @@ import { TRPCError } from "@trpc/server";
 import { getServerSession } from "next-auth/next";
 import { z } from "zod";
 
-import { authOptions } from "@saasfly/auth";
-import { db, SubscriptionPlan } from "@saasfly/db";
+import { authOptions } from "@Saasfly/auth";
+import { db, SubscriptionPlan } from "@Saasfly/db";
 
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 

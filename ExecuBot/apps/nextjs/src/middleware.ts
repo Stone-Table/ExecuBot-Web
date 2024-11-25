@@ -132,5 +132,8 @@ const authMiddleware = withAuth(
 );
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: [
+    // Skip auth for chat page
+    "/((?!chat|api|_next/static|_next/image|favicon.ico).*)",
+  ],
 };

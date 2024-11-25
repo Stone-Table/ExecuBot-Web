@@ -19,25 +19,14 @@
     "": ""
   },
   "marketing": {
-    "introducing": "Introducing Saasfly",
-    "title": "Saasfly: A new SaaS player? Make things easier.",
-    "sub_title": "Your complete All-in-One solution for building SaaS services.",
+    "introducing": "Introducing Execubot",
+    "title": "Execubot: AI-Powered Executive Intelligence for Engineering Teams",
+    "sub_title": "Make data-driven decisions about your engineering team's performance.",
     "get_started": "Get Started",
-    "view_on_github": "View on GitHub",
-    "explore_product": "Explore Product",
+    "view_on_github": "Book Demo",
+    "explore_product": "Explore Features",
     "features": "Features",
-    "sub_features": "Cloud-native: Simplifying technology and reducing costs for startups.",
-    "k8s_features": "Fast, simple development",
-    "devops_features": "Easy application deployment",
-    "price_features": "Economically efficient for production environments.",
-    "main_nav_features": "Features",
-    "main_nav_pricing": "Pricing",
-    "main_nav_products": "Products",
-    "main_nav_blog": "Blog",
-    "main_nav_documentation": "Documentation",
-    "login": "Login",
-    "signup": "Sign up",
-    "": ""
+    "features_description": "Comprehensive insights across all your development platforms"
   },
   "login": {
     "back": "Back",

@@ -1,4 +1,4 @@
-import { getCurrentUser } from "@saasfly/auth";
+import { getCurrentUser } from "@Saasfly/auth";
 
 import { PricingCards } from "~/components/price/pricing-cards";
 import { PricingFaq } from "~/components/price/pricing-faq";

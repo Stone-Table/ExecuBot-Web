@@ -4,7 +4,7 @@ import React from "react";
 
 // import { useTheme } from "next-themes";
 
-// import { SparklesCore } from "@saasfly/ui/sparkles";
+// import { SparklesCore } from "@Saasfly/ui/sparkles";
 
 export function Sparkless() {
   // const { theme } = useTheme();

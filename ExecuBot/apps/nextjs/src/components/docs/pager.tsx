@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Doc } from "contentlayer/generated";
 
-import { cn } from "@saasfly/ui";
-import { buttonVariants } from "@saasfly/ui/button";
-import * as Icons from "@saasfly/ui/icons";
+import { cn } from "@Saasfly/ui";
+import { buttonVariants } from "@Saasfly/ui/button";
+import * as Icons from "@Saasfly/ui/icons";
 
 import { getDocsConfig } from "~/config/ui/docs";
 

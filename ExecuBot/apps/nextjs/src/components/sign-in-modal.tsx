@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
 
-import { Button } from "@saasfly/ui/button";
-import * as Icons from "@saasfly/ui/icons";
+import { Button } from "@Saasfly/ui/button";
+import * as Icons from "@Saasfly/ui/icons";
 
 import { Modal } from "~/components/modal";
 import { siteConfig } from "~/config/site";
@@ -21,7 +21,7 @@ export const SignInModal = ({ dict }: { dict: Record<string, string> }) => {
         <div className="flex flex-col items-center justify-center space-y-3 border-b bg-background px-4 py-6 pt-8 text-center md:px-16">
           <a href={siteConfig.url}>
             <Image
-              src="/images/avatars/saasfly-logo.svg"
+              src="/images/avatars/Saasfly-logo.svg"
               className="mx-auto"
               width="64"
               height="64"

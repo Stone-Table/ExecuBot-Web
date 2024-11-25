@@ -1,5 +1,5 @@
 {
-  "name": "@saasfly/auth-proxy",
+  "name": "@Saasfly/auth-proxy",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,10 +12,10 @@
     "@auth/core": "0.31.0"
   },
   "devDependencies": {
-    "@saasfly/eslint-config": "workspace:*",
-    "@saasfly/prettier-config": "workspace:*",
-    "@saasfly/tailwind-config": "workspace:*",
-    "@saasfly/typescript-config": "workspace:*",
+    "@Saasfly/eslint-config": "workspace:*",
+    "@Saasfly/prettier-config": "workspace:*",
+    "@Saasfly/tailwind-config": "workspace:*",
+    "@Saasfly/typescript-config": "workspace:*",
     "@types/node": "20.12.12",
     "eslint": "8.57.0",
     "h3": "1.11.1",
@@ -26,8 +26,8 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@saasfly/eslint-config/base"
+      "@Saasfly/eslint-config/base"
     ]
   },
-  "prettier": "@saasfly/prettier-config"
+  "prettier": "@Saasfly/prettier-config"
 }

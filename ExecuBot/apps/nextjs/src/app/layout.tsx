@@ -7,8 +7,8 @@ import { NextDevtoolsProvider } from "@next-devtools/core";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import { cn } from "@saasfly/ui";
-import { Toaster } from "@saasfly/ui/toaster";
+import { cn } from "@Saasfly/ui";
+import { Toaster } from "@Saasfly/ui/toaster";
 
 import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
@@ -50,7 +50,7 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "saasfly",
+      name: "Saasfly",
     },
   ],
   creator: "Saasfly",
@@ -67,7 +67,7 @@ export const metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://show.saasfly.io/"),
+  metadataBase: new URL("https://show.Saasfly.io/"),
   // manifest: `${siteConfig.url}/site.webmanifest`,
 };
 

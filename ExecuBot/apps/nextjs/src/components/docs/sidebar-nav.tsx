@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { cn } from "@saasfly/ui";
+import { cn } from "@Saasfly/ui";
 
 import type { SidebarNavItem } from "~/types";
 

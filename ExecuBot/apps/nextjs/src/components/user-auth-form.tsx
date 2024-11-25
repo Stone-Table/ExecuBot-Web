@@ -7,12 +7,12 @@ import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { cn } from "@saasfly/ui";
-import { buttonVariants } from "@saasfly/ui/button";
-import * as Icons from "@saasfly/ui/icons";
-import { Input } from "@saasfly/ui/input";
-import { Label } from "@saasfly/ui/label";
-import { toast } from "@saasfly/ui/use-toast";
+import { cn } from "@Saasfly/ui";
+import { buttonVariants } from "@Saasfly/ui/button";
+import * as Icons from "@Saasfly/ui/icons";
+import { Input } from "@Saasfly/ui/input";
+import { Label } from "@Saasfly/ui/label";
+import { toast } from "@Saasfly/ui/use-toast";
 
 type Dictionary = Record<string, string>;
 

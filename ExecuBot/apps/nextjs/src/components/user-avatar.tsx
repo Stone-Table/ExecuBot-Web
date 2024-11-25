@@ -1,8 +1,8 @@
 import type { AvatarProps } from "@radix-ui/react-avatar";
 import type { User } from "next-auth";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@saasfly/ui/avatar";
-import * as Icons from "@saasfly/ui/icons";
+import { Avatar, AvatarFallback, AvatarImage } from "@Saasfly/ui/avatar";
+import * as Icons from "@Saasfly/ui/icons";
 
 interface UserAvatarProps extends AvatarProps {
   user: Pick<User, "image" | "name">;

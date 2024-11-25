@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 
-import { cn } from "@saasfly/ui";
+import { cn } from "@Saasfly/ui";
 
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined

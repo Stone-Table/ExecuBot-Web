@@ -1,5 +1,5 @@
 {
-  "name": "@saasfly/eslint-config",
+  "name": "@Saasfly/eslint-config",
   "version": "0.0.1",
   "private": true,
   "files": [
@@ -26,8 +26,8 @@
     "eslint-plugin-react-hooks": "4.6.0"
   },
   "devDependencies": {
-    "@saasfly/prettier-config": "workspace:*",
-    "@saasfly/typescript-config": "workspace:*",
+    "@Saasfly/prettier-config": "workspace:*",
+    "@Saasfly/typescript-config": "workspace:*",
     "eslint": "8.57.0",
     "typescript": "5.4.5"
   },
@@ -37,5 +37,5 @@
       "./base.js"
     ]
   },
-  "prettier": "@saasfly/prettier-config"
+  "prettier": "@Saasfly/prettier-config"
 }
