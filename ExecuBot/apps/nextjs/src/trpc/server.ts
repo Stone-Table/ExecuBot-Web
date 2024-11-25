@@ -6,7 +6,7 @@ import { cookies, headers } from "next/headers";
 import { loggerLink } from "@trpc/client";
 import { experimental_createTRPCNextAppDirServer } from "@trpc/next/app-dir/server";
 
-import type { AppRouter } from "@saasfly/api";
+import type { AppRouter } from "@Saasfly/api";
 
 import { endingLink, transformer } from "./shared";
 
@@ -39,4 +39,4 @@ export const trpc = experimental_createTRPCNextAppDirServer<AppRouter>({
   },
 });
 
-export { type RouterInputs, type RouterOutputs } from "@saasfly/api";
+export { type RouterInputs, type RouterOutputs } from "@Saasfly/api";

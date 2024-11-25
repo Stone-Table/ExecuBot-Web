@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@saasfly/ui";
-import { AnimatedList } from "@saasfly/ui/animated-list";
+import { cn } from "@Saasfly/ui";
+import { AnimatedList } from "@Saasfly/ui/animated-list";
 
 interface Item {
   name: string;
@@ -13,32 +13,31 @@ interface Item {
 
 let notifications = [
   {
-    name: "Payment received",
-    description: "Stripe subscription",
-    time: "15m ago",
-
-    icon: "💸",
+    name: "Performance Analysis",
+    description: "Real-time developer productivity metrics",
+    time: "Live Updates",
+    icon: "📊",
     color: "#00C9A7",
   },
   {
-    name: "User signed up",
-    description: "Auth, simple and clean",
-    time: "10m ago",
-    icon: "👤",
+    name: "Multi-Platform Integration",
+    description: "GitHub, GitLab, Jira, AWS, Azure, GCP",
+    time: "Connected",
+    icon: "🔄",
     color: "#FFB800",
   },
   {
-    name: "New Emails",
-    description: "Create beautiful emails",
-    time: "5m ago",
-    icon: "💬",
+    name: "AI Insights",
+    description: "Smart recommendations for team optimization",
+    time: "Real-time",
+    icon: "🤖",
     color: "#FF3D71",
   },
   {
-    name: "Easy Deploy",
-    description: "Deploy your app with ease",
-    time: "2m ago",
-    icon: "🗞️",
+    name: "Executive Dashboard",
+    description: "Clear visibility into team performance",
+    time: "Updated",
+    icon: "📱",
     color: "#1E86FF",
   },
 ];

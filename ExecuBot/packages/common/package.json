@@ -1,5 +1,5 @@
 {
-  "name": "@saasfly/common",
+  "name": "@Saasfly/common",
   "version": "0.1.0",
   "private": true,
   "exports": {
@@ -21,13 +21,13 @@
     "format": "prettier --check '**/*.{mjs,ts,json}' "
   },
   "dependencies": {
-    "@saasfly/ui": "workspace:*",
+    "@Saasfly/ui": "workspace:*",
     "resend": "2.1.0"
   },
   "devDependencies": {
-    "@saasfly/eslint-config": "workspace:*",
-    "@saasfly/prettier-config": "workspace:*",
-    "@saasfly/typescript-config": "workspace:*",
+    "@Saasfly/eslint-config": "workspace:*",
+    "@Saasfly/prettier-config": "workspace:*",
+    "@Saasfly/typescript-config": "workspace:*",
     "eslint": "8.57.0",
     "prettier": "3.2.5",
     "typescript": "5.4.5"
@@ -35,8 +35,8 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@saasfly/eslint-config/base"
+      "@Saasfly/eslint-config/base"
     ]
   },
-  "prettier": "@saasfly/prettier-config"
+  "prettier": "@Saasfly/prettier-config"
 }

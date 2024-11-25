@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-import { cn } from "@saasfly/ui";
-import { buttonVariants } from "@saasfly/ui/button";
-import * as Icons from "@saasfly/ui/icons";
+import { cn } from "@Saasfly/ui";
+import { buttonVariants } from "@Saasfly/ui/button";
+import * as Icons from "@Saasfly/ui/icons";
 
 import { UserAuthForm } from "~/components/user-auth-form";
 import type { Locale } from "~/config/i18n-config";
@@ -41,7 +41,7 @@ export default async function LoginPage({
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
           <Image
-            src="/images/avatars/saasfly-logo.svg"
+            src="/images/avatars/Saasfly-logo.svg"
             className="mx-auto"
             width="64"
             height="64"

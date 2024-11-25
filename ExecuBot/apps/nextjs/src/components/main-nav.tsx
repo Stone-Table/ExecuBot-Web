@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSelectedLayoutSegment } from "next/navigation";
 
-import { cn } from "@saasfly/ui";
-import * as Icons from "@saasfly/ui/icons";
+import { cn } from "@Saasfly/ui";
+import * as Icons from "@Saasfly/ui/icons";
 
 import { MobileNav } from "~/components/mobile-nav";
 import type { MainNavItem } from "~/types";
@@ -33,7 +33,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
       <Link href={`/${lang}`} className="hidden items-center space-x-2 md:flex">
         <div>
           <Image
-            src="/images/avatars/saasfly-logo.svg"
+            src="/images/avatars/Saasfly-logo.svg"
             width="36"
             height="36"
             alt=""

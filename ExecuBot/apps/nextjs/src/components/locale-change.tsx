@@ -3,14 +3,14 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 
-import { Button } from "@saasfly/ui/button";
+import { Button } from "@Saasfly/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@saasfly/ui/dropdown-menu";
-import * as Icons from "@saasfly/ui/icons";
+} from "@Saasfly/ui/dropdown-menu";
+import * as Icons from "@Saasfly/ui/icons";
 
 import { i18n, localeMap } from "~/config/i18n-config";
 

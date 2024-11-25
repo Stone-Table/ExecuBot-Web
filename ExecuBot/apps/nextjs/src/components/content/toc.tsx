@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { cn } from "@saasfly/ui";
+import { cn } from "@Saasfly/ui";
 
 import type { TableOfContents } from "~/lib/toc";
 import { useMounted } from "~/lib/use-mounted";

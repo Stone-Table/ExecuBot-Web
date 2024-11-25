@@ -15,8 +15,8 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         actions: [
             (answers) => {
                 if ("name" in answers && typeof answers.name === "string") {
-                    if (answers.name.startsWith("@saasfly/")) {
-                        answers.name = answers.name.replace("@saasfly/", "");
+                    if (answers.name.startsWith("@Saasfly/")) {
+                        answers.name = answers.name.replace("@Saasfly/", "");
                     }
                 }
                 return "Config sanitized";

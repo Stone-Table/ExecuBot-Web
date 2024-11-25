@@ -1,5 +1,5 @@
 {
-  "name": "@saasfly/ui",
+  "name": "@Saasfly/ui",
   "private": true,
   "version": "0.1.0",
   "typesVersions": {
@@ -61,10 +61,10 @@
     "three-globe": "2.31.0"
   },
   "devDependencies": {
-    "@saasfly/eslint-config": "workspace:*",
-    "@saasfly/prettier-config": "workspace:*",
-    "@saasfly/typescript-config": "workspace:*",
-    "@saasfly/tailwind-config": "workspace:*",
+    "@Saasfly/eslint-config": "workspace:*",
+    "@Saasfly/prettier-config": "workspace:*",
+    "@Saasfly/typescript-config": "workspace:*",
+    "@Saasfly/tailwind-config": "workspace:*",
     "@types/react": "18.3.3",
     "@tanstack/react-table": "8.17.0",
     "date-fns": "3.3.1",
@@ -78,12 +78,12 @@
     "tailwindcss-animate": "1.0.7",
     "typescript": "5.4.5"
   },
-  "prettier": "@saasfly/prettier-config",
+  "prettier": "@Saasfly/prettier-config",
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@saasfly/eslint-config/base",
-      "@saasfly/eslint-config/react"
+      "@Saasfly/eslint-config/base",
+      "@Saasfly/eslint-config/react"
     ]
   },
   "exports": {

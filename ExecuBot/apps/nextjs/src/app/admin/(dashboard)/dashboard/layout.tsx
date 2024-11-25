@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 
-import { getCurrentUser } from "@saasfly/auth";
+import { getCurrentUser } from "@Saasfly/auth";
 
 import { SiteFooter } from "~/components/site-footer";
 import { i18n, type Locale } from "~/config/i18n-config";

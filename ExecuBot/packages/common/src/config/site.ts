@@ -1,9 +1,11 @@
 export const siteConfig = {
-  name: "Saasfly",
-  description: "We provide an easier way to build saas service in production",
-  url: "https://github.com/saaslfy/saasfly",
-  ogImage: "",
+  name: "Execubot",
+  description: "AI-powered executive intelligence for engineering teams",
+  url: "https://execubot.com",
+  ogImage: "/images/execubot.svg",
   links: {
-    github: "https://github.com/saaslfy",
+    github: "https://github.com/execubot",
+    twitter: "https://twitter.com/execubot",
+    linkedin: "https://linkedin.com/company/execubot"
   },
 };

@@ -5,11 +5,11 @@ import {
   type TRPCLink,
 } from "@trpc/client";
 
-import type { AppRouter } from "@saasfly/api";
+import type { AppRouter } from "@Saasfly/api";
 
 import { env } from "~/env.mjs";
 
-export { transformer } from "@saasfly/api/transformer";
+export { transformer } from "@Saasfly/api/transformer";
 const getBaseUrl = () => {
   if (typeof window !== "undefined") return "";
   const vc = env.NEXT_PUBLIC_APP_URL;

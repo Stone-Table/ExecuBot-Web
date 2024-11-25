@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@saasfly/ui/dropdown-menu";
+} from "@Saasfly/ui/dropdown-menu";
 
 import { UserAvatar } from "~/components/user-avatar";
 

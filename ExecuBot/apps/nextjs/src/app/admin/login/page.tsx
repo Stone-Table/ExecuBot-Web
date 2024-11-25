@@ -5,10 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 
-import { cn } from "@saasfly/ui";
-import { CardBody, CardContainer, CardItem } from "@saasfly/ui/3d-card";
-import { buttonVariants } from "@saasfly/ui/button";
-import * as Icons from "@saasfly/ui/icons";
+import { cn } from "@Saasfly/ui";
+import { CardBody, CardContainer, CardItem } from "@Saasfly/ui/3d-card";
+import { buttonVariants } from "@Saasfly/ui/button";
+import * as Icons from "@Saasfly/ui/icons";
 
 export default function LoginPage() {
   // const [isLoading, setIsLoading] = React.useState<boolean>(false);
@@ -56,7 +56,7 @@ export default function LoginPage() {
             <CardItem
               translateZ={20}
               as={Link}
-              href="https://github.com/saasfly/saasfly"
+              href="https://github.com/Saasfly/Saasfly"
               target="__blank"
               className="rounded-xl px-4 py-2 text-xs font-normal dark:text-white"
             >

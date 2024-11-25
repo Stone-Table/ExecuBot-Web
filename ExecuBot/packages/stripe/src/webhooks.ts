@@ -1,6 +1,6 @@
 import type Stripe from "stripe";
 
-import { db, SubscriptionPlan } from "@saasfly/db";
+import { db, SubscriptionPlan } from "@Saasfly/db";
 
 import { stripe } from ".";
 import { getSubscriptionPlan } from "./plans";

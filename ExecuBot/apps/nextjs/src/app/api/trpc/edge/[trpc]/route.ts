@@ -1,8 +1,8 @@
 import type { NextRequest } from "next/server";
 import { fetchRequestHandler } from "@trpc/server/adapters/fetch";
 
-import { createTRPCContext } from "@saasfly/api";
-import { edgeRouter } from "@saasfly/api/edge";
+import { createTRPCContext } from "@Saasfly/api";
+import { edgeRouter } from "@Saasfly/api/edge";
 
 // export const runtime = "edge";
 
