@@ -19,9 +19,9 @@ import type { Meteor } from "~/types/meteors";
 const meteors_data: Meteor = {
   name: "Join our Discord",
   description:
-    "Join our Discord server to chat with other developers and get help.",
+    "Join our Discord server to chat with our developers and get help.",
   button_content: "Chat with us",
-  url: "https://discord.gg/8SwSX43wnD",
+  url: "https://discord.gg/pnTthNbEUd",
 };
 
 export default async function IndexPage({
@@ -39,23 +39,23 @@ export default async function IndexPage({
         <div className="grid grid-cols-1 gap-10 pb-10 md:pb-40 xl:grid-cols-2">
           <div className="flex flex-col items-start">
             <div className="flex flex-col pt-4 md:pt-28 lg:pt-28 xl:pt-28">
-              <Link href="https://document.saasfly.io" target="_blank">
+              <Link href="https://github.com/Stone-Table/ExecuBot-Web" target="_blank">
                 <DocumentGuide>
-                  {dict.marketing.introducing || "Introducing Saasfly"}
+                  {dict.marketing.introducing || "Introducing ExecuBot"}
                 </DocumentGuide>
               </Link>
 
               <div className="mt-6">
                 <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
                   {dict.marketing.title ||
-                    "Saasfly: A new SaaS player? Make things easier."}
+                    "ExecuBot: AI-powered engineering productivity analytics for executives."}
                 </h1>
               </div>
 
               <div>
                 <span className="text-zinc-500 sm:text-xl">
                   {dict.marketing.sub_title ||
-                    "Your complete All-in-One solution for building SaaS services."}
+                    "Your complete All-in-One solution for knowing what your engineering team is doing."}
                 </span>
                 <TypewriterEffectSmooths />
               </div>
@@ -69,7 +69,7 @@ export default async function IndexPage({
                   </ShimmerButton>
                 </Link>
 
-                <Link href="https://github.com/saasfly/saasfly" target="_blank">
+                <Link href="https://github.com/Stone-Table/ExecuBot-Web" target="_blank">
                   <div className="flex h-full items-center justify-center">
                     <Icons.GitHub className="mr-2 h-6 w-6" />
                     <span className="text-base font-semibold">
@@ -132,7 +132,7 @@ export default async function IndexPage({
           <div className="mb-6 text-xl dark:text-zinc-100 md:text-xl">
             Don’t just take our word for it. Here’s what{" "}
             <span className="font-bold">real people</span> are saying about
-            Saasfly.
+            ExecuBot.
           </div>
 
           <div className="w-full overflow-x-hidden">
