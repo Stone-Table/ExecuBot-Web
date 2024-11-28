@@ -48,7 +48,7 @@ export default async function IndexPage({
               <div className="mt-6">
                 <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
                   {dict.marketing.title ||
-                    "Saasfly: A new SaaS player? Make things easier."}
+                    "Execubot: AI-Powered Executive Intelligence for Engineering Teams."}
                 </h1>
               </div>
 
@@ -69,7 +69,10 @@ export default async function IndexPage({
                   </ShimmerButton>
                 </Link>
 
-                <Link href="https://github.com/saasfly/saasfly" target="_blank">
+                <Link
+                  href="https://github.com/Stone-Table/ExecuBot-Web"
+                  target="_blank"
+                >
                   <div className="flex h-full items-center justify-center">
                     <Icons.GitHub className="mr-2 h-6 w-6" />
                     <span className="text-base font-semibold">
@@ -85,7 +88,7 @@ export default async function IndexPage({
             <div className="flex flex-col pt-28">
               <Meteorss meteor={meteors_data} />
               <div className="mt-4 flex w-full justify-between">
-                <XBlogArticle />
+                {/* <XBlogArticle /> */}
                 <div className="ml-4">
                   <FeaturesCard />
                 </div>

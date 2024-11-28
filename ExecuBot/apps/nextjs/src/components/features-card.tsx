@@ -13,31 +13,30 @@ interface Item {
 
 let notifications = [
   {
-    name: "Payment received",
-    description: "Stripe subscription",
-    time: "15m ago",
-
+    name: "Performance Analysis",
+    description: "Real-time developer productivity metrics",
+    time: "Live Updates",
     icon: "💸",
     color: "#00C9A7",
   },
   {
-    name: "User signed up",
-    description: "Auth, simple and clean",
-    time: "10m ago",
+    name: "Multi-Platform Integration",
+    description: "GitHub, GitLab, Jira, Azure, GCP",
+    time: "Connected",
     icon: "👤",
     color: "#FFB800",
   },
   {
-    name: "New Emails",
-    description: "Create beautiful emails",
-    time: "5m ago",
+    name: "AI Insights",
+    description: "Smart recommendations for team optimization",
+    time: "Real-time",
     icon: "💬",
     color: "#FF3D71",
   },
   {
-    name: "Easy Deploy",
-    description: "Deploy your app with ease",
-    time: "2m ago",
+    name: "Executive Dashboard",
+    description: "Clear visibility into team performance",
+    time: "Updated",
     icon: "🗞️",
     color: "#1E86FF",
   },
