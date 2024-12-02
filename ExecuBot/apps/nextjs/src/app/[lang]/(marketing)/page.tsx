@@ -19,9 +19,9 @@ import type { Meteor } from "~/types/meteors";
 const meteors_data: Meteor = {
   name: "Join our Discord",
   description:
-    "Join our Discord server to chat with other developers and get help.",
+    "Join our Discord server to chat with other developers and get help or email us at support@execefficiency.ai.",
   button_content: "Chat with us",
-  url: "https://discord.gg/8SwSX43wnD",
+  url: "https://discord.gg/nTc5uyXr",
 };
 
 export default async function IndexPage({
@@ -39,11 +39,9 @@ export default async function IndexPage({
         <div className="grid grid-cols-1 gap-10 pb-10 md:pb-40 xl:grid-cols-2">
           <div className="flex flex-col items-start">
             <div className="flex flex-col pt-4 md:pt-28 lg:pt-28 xl:pt-28">
-              <Link href="https://document.saasfly.io" target="_blank">
-                <DocumentGuide>
-                  {dict.marketing.introducing || "Introducing Saasfly"}
-                </DocumentGuide>
-              </Link>
+              <DocumentGuide>
+                {dict.marketing.introducing || "Introducing Execubot"}
+              </DocumentGuide>
 
               <div className="mt-6">
                 <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
@@ -61,7 +59,7 @@ export default async function IndexPage({
               </div>
 
               <div className="mb-4 mt-6 flex w-full flex-col justify-center space-y-4 sm:flex-row sm:justify-start sm:space-x-8 sm:space-y-0">
-                <Link href={`${lang}/login`}>
+                <Link href={`${lang}/customer`}>
                   <ShimmerButton className="mx-auto flex justify-center">
                     <span className="z-10 w-48 whitespace-pre bg-gradient-to-b from-black from-30% to-gray-300/80 bg-clip-text text-center text-sm font-semibold leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 dark:text-transparent">
                       {dict.marketing.get_started}
@@ -98,7 +96,7 @@ export default async function IndexPage({
         </div>
       </section>
 
-      <section className="hidden h-[100vh] w-full xl:block">
+      {/* <section className="hidden h-[100vh] w-full xl:block">
         <div className="flex h-full w-full justify-between px-[220px]">
           <div className="flex w-[60%] flex-col pr-4 pt-40">
             <WobbleCardShow />
@@ -109,11 +107,11 @@ export default async function IndexPage({
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="hidden h-[100vh] w-full xl:block">
+      <section className="hidden w-full xl:block">
         <div className="flex h-full w-full justify-between px-[220px]">
-          <div className="flex w-[60%] flex-col pr-4 pt-40">
+          <div className="flex w-[60%] flex-col pb-40 pr-4">
             <div className="px-[120px]">
               <Questions />
             </div>
@@ -129,13 +127,11 @@ export default async function IndexPage({
         <div className="flex h-full w-full flex-col items-center pb-[100px] pt-10">
           <div>
             <h1 className="mb-6 text-center text-3xl font-bold dark:text-zinc-100 md:text-5xl">
-              What People Are Saying
+              Revolutionizing Efficiency with Precision and Vision
             </h1>
           </div>
           <div className="mb-6 text-xl dark:text-zinc-100 md:text-xl">
-            Don’t just take our word for it. Here’s what{" "}
-            <span className="font-bold">real people</span> are saying about
-            Saasfly.
+            From large government agencies to private companies.
           </div>
 
           <div className="w-full overflow-x-hidden">

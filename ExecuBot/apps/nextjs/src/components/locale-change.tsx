@@ -30,7 +30,7 @@ export function LocaleChange({ url }: { url: string }) {
           <span className="sr-only"></span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
+      {/* <DropdownMenuContent align="end">
         <div>
           {i18n.locales.map((locale) => {
             return (
@@ -41,7 +41,7 @@ export function LocaleChange({ url }: { url: string }) {
             );
           })}
         </div>
-      </DropdownMenuContent>
+      </DropdownMenuContent> */}
     </DropdownMenu>
   );
 }

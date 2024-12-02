@@ -19,10 +19,10 @@
     "": ""
   },
   "marketing": {
-    "introducing": "Introducing Saasfly",
+    "introducing": "Introducing Execubot",
     "title": "Execubot: AI-Powered Executive Intelligence for Engineering Teams.",
     "sub_title": "Your complete All-in-One solution for building SaaS services.",
-    "get_started": "Get Started",
+    "get_started": "Try Demo",
     "view_on_github": "View on GitHub",
     "explore_product": "Explore Product",
     "features": "Features",
@@ -52,7 +52,7 @@
     "": ""
   },
   "common": {
-    "copyright": "Copyright © ${currentYear} Nextify Limited. All rights reserved.",
+    "copyright": "Copyright © ${currentYear} Execubot Limited. All rights reserved.",
     "dashboard": {
       "main_nav_documentation": "Documentation",
       "main_nav_support": "Support",

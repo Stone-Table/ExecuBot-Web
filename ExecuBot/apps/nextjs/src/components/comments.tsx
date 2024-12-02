@@ -3,64 +3,42 @@ import Marquee from "@saasfly/ui/marquee";
 
 const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
+    name: "NASA",
+    img: "https://upload.wikimedia.org/wikipedia/commons/e/e5/NASA_logo.svg",
   },
   {
-    name: "Alex",
-    username: "@alex",
-    body: "This tool has revolutionized the way our team works.",
-    img: "https://avatar.vercel.sh/jill",
+    name: "Facebook",
+    img: "https://upload.wikimedia.org/wikipedia/commons/8/89/Facebook_Logo_%282019%29.svg",
   },
   {
-    name: "Shamoki",
-    username: "@shamoki",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
+    name: "Google",
+    img: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
   },
   {
-    name: "王伟",
-    username: "@wangwei",
-    body: "这款 SaaS 服务简直是办公利器！我的工作效率提高了很多。",
-    img: "https://avatar.vercel.sh/jane",
+    name: "Department of State",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/800px-U.S._Department_of_State_official_seal.svg.png",
   },
   {
-    name: "김민수",
-    username: "@kios",
-    body: "저는 이 SaaS 서비스에 매우 만족하고 있습니다.",
-    img: "https://avatar.vercel.sh/jenny",
+    name: "Department of Defense",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Seal_of_the_United_States_Department_of_Defense.svg/180px-Seal_of_the_United_States_Department_of_Defense.svg.png",
   },
   {
-    name: "山田太郎",
-    username: "@samtimkun",
-    body: "このSaaSサービスには本当に感謝しています。",
-    img: "https://avatar.vercel.sh/james",
+    name: "Apple",
+    img: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+  },
+  {
+    name: "Amazon",
+    img: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
   },
 ];
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
-
-const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
-}: {
-  img: string;
-  name: string;
-  username: string;
-  body: string;
-}) => {
+const firstRow = reviews.slice(0, reviews.length);
+const ReviewCard = ({ img, name }: { img: string; name: string }) => {
   return (
     <figure
       className={cn(
         "relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
       )}
     >
@@ -70,10 +48,10 @@ const ReviewCard = ({
           <figcaption className="text-sm font-medium dark:text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
+          {/* <p className="text-xs font-medium dark:text-white/40">{username}</p> */}
         </div>
       </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
+      {/* <blockquote className="mt-2 text-sm">{body}</blockquote> */}
     </figure>
   );
 };
@@ -82,15 +60,11 @@ const Comments = () => {
   return (
     <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-background py-4 sm:py-20 md:py-20 xl:py-20">
       <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {firstRow.map((review, index) => (
+          <ReviewCard key={index} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
+
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
     </div>
