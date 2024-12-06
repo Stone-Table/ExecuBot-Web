@@ -46,7 +46,7 @@ export default async function IndexPage({
               <div className="mt-6">
                 <h1 className="relative mb-6 max-w-4xl text-left text-4xl font-bold dark:text-zinc-100 sm:text-7xl md:text-7xl xl:text-7xl">
                   {dict.marketing.title ||
-                    "Execubot: AI-Powered Executive Intelligence for Engineering Teams."}
+                    "Execubot: Get in the detail"}
                 </h1>
               </div>
 
