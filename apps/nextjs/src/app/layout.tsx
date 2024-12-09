@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "~/styles/globals.css";
 
+import { ClerkProvider } from "@clerk/nextjs";
 import { NextDevtoolsProvider } from "@next-devtools/core";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -77,30 +78,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      {/*<Suspense>*/}
-      {/*  <PostHogPageview />*/}
-      {/*</Suspense>*/}
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable,
-          fontHeading.variable,
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        {/*<Suspense>*/}
+        {/*  <PostHogPageview />*/}
+        {/*</Suspense>*/}
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased",
+            fontSans.variable,
+            fontHeading.variable,
+          )}
         >
-          <NextDevtoolsProvider>{children}</NextDevtoolsProvider>
-          <Analytics />
-          <SpeedInsights />
-          <Toaster />
-          <TailwindIndicator />
-        </ThemeProvider>
-      </body>
-    </html>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem={false}
+          >
+            <NextDevtoolsProvider>{children}</NextDevtoolsProvider>
+            <Analytics />
+            <SpeedInsights />
+            <Toaster />
+            <TailwindIndicator />
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

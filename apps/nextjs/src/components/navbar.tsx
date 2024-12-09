@@ -1,6 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/nextjs";
 import type { User } from "next-auth";
 
 import { cn } from "@saasfly/ui";
@@ -54,7 +61,7 @@ export function NavBar({
         <div className="flex items-center space-x-3">
           {rightElements}
           <LocaleChange url={"/"} />
-          {!user ? (
+          {/* {!user ? (
             <Link
               href={`/${lang}/login`}
               className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
@@ -63,9 +70,14 @@ export function NavBar({
                 ? marketing.login
                 : "Default Login Text"}
             </Link>
-          ) : null}
-
-          {user ? (
+          ) : null} */}
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+          {/* {user ? (
             <UserAccountNav
               user={user}
               params={{ lang: `${lang}` }}
@@ -82,7 +94,7 @@ export function NavBar({
                 ? marketing.signup
                 : "Default Signup Text"}
             </Button>
-          )}
+          )} */}
         </div>
       </div>
     </header>
