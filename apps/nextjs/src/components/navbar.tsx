@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   SignedIn,
   SignedOut,
@@ -8,9 +7,9 @@ import {
   SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
-import { cn } from "@Saasfly/ui";
-import { Button } from "@Saasfly/ui/button";
-import * as Icons from "@Saasfly/ui/icons";
+
+import { cn } from "@saasfly/ui";
+import { Button } from "@saasfly/ui/button";
 
 import useScroll from "~/hooks/use-scroll";
 import type { MainNavItem } from "~/types";
