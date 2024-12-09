@@ -29,7 +29,7 @@ export default async function MarketingLayout({
           }
           params={{ lang: `${lang}` }}
           scroll={true}
-          user={user}
+          // user={user}
           marketing={dict.marketing}
           dropdown={dict.dropdown}
         />

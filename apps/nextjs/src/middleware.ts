@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { getToken } from "next-auth/jwt";
@@ -8,7 +8,11 @@ import { withAuth } from "next-auth/middleware";
 
 import { i18n } from "~/config/i18n-config";
 
-export default clerkMiddleware();
+export default clerkMiddleware(async (auth, request) => {
+  if (!isPublicRoute(request)) {
+    await auth.protect();
+  }
+});
 const noNeedProcessRoute = [".*\\.png", ".*\\.jpg", ".*\\.opengraph-image.png"];
 
 const noRedirectRoute = ["/api(.*)", "/trpc(.*)", "/admin"];
@@ -133,6 +137,7 @@ const authMiddleware = withAuth(
     },
   },
 );
+const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/sign-up(.*)"]);
 
 export const config = {
   matcher: [
