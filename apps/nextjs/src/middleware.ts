@@ -92,7 +92,7 @@
 //     const token = await getToken({ req });
 //     const isAuth = !!token;
 //     const isAdmin = token?.isAdmin;
-//     const isAuthPage = /^\/[a-zA-Z]{2,}\/(login|register|customer)/.test(
+//     const isAuthPage = /^\/[a-zA-Z]{2,}\/(login|register|customer|waitlist)/.test(
 //       req.nextUrl.pathname,
 //     );
 //     const isAuthRoute = /^\/api\/trpc\//.test(req.nextUrl.pathname);
