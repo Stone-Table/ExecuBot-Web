@@ -53,7 +53,7 @@ export default async function IndexPage({
               <div>
                 <span className="text-zinc-500 sm:text-xl">
                   {dict.marketing.sub_title ||
-                    "Your complete All-in-One solution for building SaaS services."}
+                    ""}
                 </span>
                 <TypewriterEffectSmooths />
               </div>
