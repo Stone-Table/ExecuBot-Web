@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 import { getToken } from "next-auth/jwt";
@@ -7,6 +8,11 @@ import { withAuth } from "next-auth/middleware";
 
 import { i18n } from "~/config/i18n-config";
 
+export default clerkMiddleware(async (auth, request) => {
+  if (!isPublicRoute(request)) {
+    await auth.protect();
+  }
+});
 const noNeedProcessRoute = [".*\\.png", ".*\\.jpg", ".*\\.opengraph-image.png"];
 
 const noRedirectRoute = ["/api(.*)", "/trpc(.*)", "/admin"];
@@ -55,7 +61,7 @@ function isNoNeedProcess(request: NextRequest): boolean {
  * @param request
  * @returns
  */
-export default async function middleware(request: NextRequest) {
+export const middleware = (request: NextRequest) => {
   if (isNoNeedProcess(request)) {
     return null;
   }
@@ -85,16 +91,17 @@ export default async function middleware(request: NextRequest) {
   }
   // @ts-ignore
   return authMiddleware(request, null);
-}
+};
 
 const authMiddleware = withAuth(
   async function middlewares(req) {
     const token = await getToken({ req });
     const isAuth = !!token;
     const isAdmin = token?.isAdmin;
-    const isAuthPage = /^\/[a-zA-Z]{2,}\/(login|register|customer)/.test(
-      req.nextUrl.pathname,
-    );
+    const isAuthPage =
+      /^\/[a-zA-Z]{2,}\/(login|register|customer|waitlist)/.test(
+        req.nextUrl.pathname,
+      );
     const isAuthRoute = /^\/api\/trpc\//.test(req.nextUrl.pathname);
     const locale = getLocale(req);
 
@@ -130,7 +137,13 @@ const authMiddleware = withAuth(
     },
   },
 );
+const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/sign-up(.*)"]);
 
 export const config = {
-  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: [
+    // Skip Next.js internals and all static files, unless found in search params
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    // Always run for API routes
+    "/(api|trpc)(.*)",
+  ],
 };
