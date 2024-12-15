@@ -86,7 +86,7 @@ export default async function IndexPage({
             <div className="flex flex-col pt-28">
               <Meteorss meteor={meteors_data} />
               <div className="mt-4 flex w-full justify-between">
-                {/* <XBlogArticle /> */}
+                <XBlogArticle />
                 <div className="ml-4">
                   <FeaturesCard />
                 </div>
