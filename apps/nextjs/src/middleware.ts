@@ -15,7 +15,12 @@ export default clerkMiddleware(async (auth, request) => {
 });
 const noNeedProcessRoute = [".*\\.png", ".*\\.jpg", ".*\\.opengraph-image.png"];
 
-const noRedirectRoute = ["/api(.*)", "/trpc(.*)", "/admin"];
+const noRedirectRoute = [
+  "^/$",
+  "^/api/.*",
+  "/trpc(.*)",
+  "/admin",
+];
 
 const publicRoute = [
   "/(\\w{2}/)?signin(.*)",
