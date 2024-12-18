@@ -30,6 +30,12 @@ const publicRoute = [
   "/(\\w{2}/)?blog(.*)",
   "/(\\w{2}/)?pricing(.*)",
   "^/\\w{2}$", // root with locale
+  "^/$",
+  "^/blog.*",
+  "^/login.*",
+  "^/register.*",
+  "^/pricing.*",
+  "^/waitlist.*",
 ];
 
 function getLocale(request: NextRequest): string | undefined {
