@@ -6,28 +6,27 @@ export const getMarketingConfig = async ({
   params: { lang },
 }: {
   params: {
-    lang: Locale;
+    lang: string;
   };
 }): Promise<MarketingConfig> => {
-  const dict = await getDictionary(lang);
   return {
     mainNav: [
+      // {
+      //   title: "Features",
+      //   href: "/features",
+      // },
+      // {
+      //   title: "Pricing",
+      //   href: "/pricing",
+      // },
       {
-        title: dict.marketing.main_nav_features,
-        href: `/#features`,
+        title: "Blog",
+        href: "/blog",
       },
-      {
-        title: dict.marketing.main_nav_pricing,
-        href: `/pricing`,
-      },
-      {
-        title: dict.marketing.main_nav_blog,
-        href: `/blog`,
-      },
-      {
-        title: dict.marketing.main_nav_documentation,
-        href: `/docs`,
-      },
+      // {
+      //   title: "Documentation",
+      //   href: "/docs",
+      // },
     ],
   };
 };
