@@ -15,7 +15,12 @@ export default clerkMiddleware(async (auth, request) => {
 });
 const noNeedProcessRoute = [".*\\.png", ".*\\.jpg", ".*\\.opengraph-image.png"];
 
-const noRedirectRoute = ["/api(.*)", "/trpc(.*)", "/admin"];
+const noRedirectRoute = [
+  "^/$",
+  "^/api/.*",
+  "/trpc(.*)",
+  "/admin",
+];
 
 const publicRoute = [
   "/(\\w{2}/)?signin(.*)",
@@ -25,6 +30,12 @@ const publicRoute = [
   "/(\\w{2}/)?blog(.*)",
   "/(\\w{2}/)?pricing(.*)",
   "^/\\w{2}$", // root with locale
+  "^/$",
+  "^/blog.*",
+  "^/login.*",
+  "^/register.*",
+  "^/pricing.*",
+  "^/waitlist.*",
 ];
 
 function getLocale(request: NextRequest): string | undefined {
