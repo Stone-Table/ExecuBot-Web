@@ -33,7 +33,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
       <Link href={`/${lang}`} className="hidden items-center space-x-2 md:flex">
         <div className="text-2xl font-semibold">Execubot</div>
       </Link>
-      {/* {items?.length ? (
+      {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map((item, index) => (
             <Link
@@ -51,7 +51,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
             </Link>
           ))}
         </nav>
-      ) : null} */}
+      ) : null}
       <button
         className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
