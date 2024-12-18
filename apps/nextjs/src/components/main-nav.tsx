@@ -32,7 +32,7 @@ export function MainNav({ items, children, params: { lang } }: MainNavProps) {
     <div className="flex gap-6 md:gap-10">
       <Link href={`/${lang}`} className="hidden items-center space-x-2 md:flex">
         <Image 
-          src="/images/logo.svg"
+          src="/logo.svg"
           alt="Execubot Logo"
           width={24}
           height={24}
