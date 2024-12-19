@@ -65,6 +65,12 @@ export const middleware = (request: NextRequest) => {
   if (isNoNeedProcess(request)) {
     return null;
   }
+
+  // Skip locale redirect for root path
+  if (request.nextUrl.pathname === '/') {
+    return NextResponse.next();
+  }
+
   const isWebhooksRoute = /^\/api\/webhooks\//.test(request.nextUrl.pathname);
   if (isWebhooksRoute) {
     return NextResponse.next();
@@ -75,7 +81,8 @@ export const middleware = (request: NextRequest) => {
     (locale) =>
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
-  // Redirect if there is no locale
+
+  // Redirect if there is no locale (except for root path)
   if (!isNoRedirect(request) && pathnameIsMissingLocale) {
     const locale = getLocale(request);
     return NextResponse.redirect(
@@ -89,7 +96,7 @@ export const middleware = (request: NextRequest) => {
   if (isPublicPage(request)) {
     return null;
   }
-  // @ts-ignore
+  
   return authMiddleware(request, null);
 };
 
@@ -147,3 +154,4 @@ export const config = {
     "/(api|trpc)(.*)",
   ],
 };
+
