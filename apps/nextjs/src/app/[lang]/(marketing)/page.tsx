@@ -17,11 +17,11 @@ import { getDictionary } from "~/lib/get-dictionary";
 import type { Meteor } from "~/types/meteors";
 
 const meteors_data: Meteor = {
-  name: "Join our Discord",
+  name: "Join our Slack",
   description:
-    "Join our Discord server to chat with other developers and get help or email us at support@execefficiency.ai.",
+    "Join our Slack server to chat with other developers and get help or email us at support@execefficiency.ai.",
   button_content: "Chat with us",
-  url: "https://discord.gg/nTc5uyXr",
+  url: "https://join.slack.com/t/execubot/shared_invite/zt-2wwxunhxw-DFRBdgHkHSJHInK77UxBzg",
 };
 
 export default async function IndexPage({
