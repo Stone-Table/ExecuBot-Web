@@ -1,18 +1,10 @@
-import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { authMiddleware } from "@clerk/nextjs";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
-import { getToken } from "next-auth/jwt";
-import { withAuth } from "next-auth/middleware";
 
 import { i18n } from "~/config/i18n-config";
 
-export default clerkMiddleware(async (auth, request) => {
-  if (!isPublicRoute(request)) {
-    await auth.protect();
-  }
-});
 const noNeedProcessRoute = [".*\\.png", ".*\\.jpg", ".*\\.opengraph-image.png"];
 
 const noRedirectRoute = ["/api(.*)", "/trpc(.*)", "/admin"];
@@ -28,14 +20,10 @@ const publicRoute = [
 ];
 
 function getLocale(request: NextRequest): string | undefined {
-  // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
   const locales = Array.from(i18n.locales);
-  // Use negotiator and intl-localematcher to get best locale
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages(
-    locales,
-  );
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales);
   return matchLocale(languages, locales, i18n.defaultLocale);
 }
 
@@ -100,58 +88,49 @@ export const middleware = (request: NextRequest) => {
   return authMiddleware(request, null);
 };
 
-const authMiddleware = withAuth(
-  async function middlewares(req) {
-    const token = await getToken({ req });
-    const isAuth = !!token;
-    const isAdmin = token?.isAdmin;
-    const isAuthPage =
-      /^\/[a-zA-Z]{2,}\/(login|register|customer|waitlist)/.test(
-        req.nextUrl.pathname,
-      );
-    const isAuthRoute = /^\/api\/trpc\//.test(req.nextUrl.pathname);
-    const locale = getLocale(req);
+export default authMiddleware({
+  publicRoutes: [
+    "/",
+    "/:locale",
+    "/:locale/login",
+    "/:locale/register",
+    "/:locale/pricing",
+    "/:locale/blog(.*)",
+    "/:locale/docs(.*)",
+    "/api/webhooks(.*)",
+    "/api/trpc(.*)",
+  ],
+  beforeAuth: (req) => {
+    // Handle locale redirects before auth
+    const url = new URL(req.url);
+    const pathname = url.pathname;
 
-    if (isAuthRoute && isAuth) {
+    // Skip locale redirect for certain paths
+    if (
+      pathname.startsWith("/_next") ||
+      pathname.includes("/api/") ||
+      pathname.match(/\.(jpg|png|gif|ico)$/)
+    ) {
       return NextResponse.next();
     }
-    if (req.nextUrl.pathname.startsWith("/admin/dashboard")) {
-      if (!isAuth || !isAdmin)
-        return NextResponse.redirect(new URL(`/admin/login`, req.url));
-      return NextResponse.next();
+
+    // Check if pathname is missing locale
+    const pathnameIsMissingLocale = i18n.locales.every(
+      (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    );
+
+    // Redirect if locale is missing
+    if (pathnameIsMissingLocale) {
+      const locale = getLocale(req) || i18n.defaultLocale;
+      url.pathname = `/${locale}${pathname}`;
+      return NextResponse.redirect(url);
     }
-    if (isAuthPage) {
-      if (isAuth) {
-        return NextResponse.redirect(new URL(`/${locale}/dashboard`, req.url));
-      }
-      return null;
-    }
-    if (!isAuth) {
-      let from = req.nextUrl.pathname;
-      if (req.nextUrl.search) {
-        from += req.nextUrl.search;
-      }
-      return NextResponse.redirect(
-        new URL(`/${locale}/login?from=${encodeURIComponent(from)}`, req.url),
-      );
-    }
+
+    return NextResponse.next();
   },
-  {
-    callbacks: {
-      authorized() {
-        return true;
-      },
-    },
-  },
-);
-const isPublicRoute = createRouteMatcher(["/sign-in(.*)", "/sign-up(.*)"]);
+});
 
 export const config = {
-  matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
-    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
-    // Always run for API routes
-    "/(api|trpc)(.*)",
-  ],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };
 
