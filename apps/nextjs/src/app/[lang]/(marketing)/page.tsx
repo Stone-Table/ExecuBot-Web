@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 
 import * as Icons from "@saasfly/ui/icons";
 
@@ -35,6 +36,11 @@ export default async function IndexPage({
 
   return (
     <>
+      <Script
+        defer
+        src="https://assets.onedollarstats.com/stonks.js"
+        id="stonks"
+      />
       <section className="w-full px-8 sm:px-48 md:px-48 xl:h-[100vh] xl:px-48">
         <div className="grid grid-cols-1 gap-10 pb-10 md:pb-40 xl:grid-cols-2">
           <div className="flex flex-col items-start">
