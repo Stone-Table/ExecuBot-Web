@@ -23,6 +23,10 @@ export const getMarketingConfig = async ({
         title: "Blog",
         href: "/blog",
       },
+      {
+        title: "Chat",
+        href: "/chat",
+      },
       // {
       //   title: "Documentation",
       //   href: "/docs",
