@@ -3,6 +3,7 @@ import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
 import { formatDate } from "~/lib/utils";
+import { i18n } from "~/config/i18n-config";
 
 interface Post {
   _id: string;
@@ -20,6 +21,21 @@ interface BlogPostsProps {
 }
 
 export function BlogPosts({ posts }: BlogPostsProps) {
+  // Get the current language from the URL or use the default
+  const currentLang = typeof window !== 'undefined' 
+    ? window.location.pathname.split('/')[1] 
+    : i18n.defaultLocale;
+  
+  // Function to prepend the language to the slug if needed
+  const getLocalizedSlug = (slug: string) => {
+    // If the slug already starts with the language, return it as is
+    if (slug.startsWith(`/${currentLang}/`)) {
+      return slug;
+    }
+    // Otherwise, prepend the language
+    return `/${currentLang}${slug}`;
+  };
+
   return (
     <div className="container space-y-10 py-6 md:py-10">
       <section>
@@ -45,7 +61,7 @@ export function BlogPosts({ posts }: BlogPostsProps) {
                 <Balancer>{posts[0]?.description}</Balancer>
               </p>
             )}
-            <Link href={posts[0]?.slug ?? "/#"} className="absolute inset-0">
+            <Link href={posts[0]?.slug ? getLocalizedSlug(posts[0].slug) : "/#"} className="absolute inset-0">
               <span className="sr-only">View Article</span>
             </Link>
           </div>
@@ -82,7 +98,7 @@ export function BlogPosts({ posts }: BlogPostsProps) {
                   {formatDate(post.date)}
                 </p>
               )}
-              <Link href={post.slug} className="absolute inset-0">
+              <Link href={getLocalizedSlug(post.slug)} className="absolute inset-0">
                 <span className="sr-only">View Article</span>
               </Link>
             </article>
