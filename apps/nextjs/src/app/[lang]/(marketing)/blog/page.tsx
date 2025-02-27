@@ -1,4 +1,5 @@
 import { compareDesc } from "date-fns";
+import Script from "next/script";
 
 import { BlogPosts } from "~/components/blog/blog-posts";
 import { allPosts } from ".contentlayer/generated";
@@ -15,8 +16,15 @@ export default function BlogPage() {
     });
 
   return (
-    <main>
-      <BlogPosts posts={posts} />
-    </main>
+    <>
+      <Script
+        defer
+        src="https://assets.onedollarstats.com/stonks.js"
+        id="stonks"
+      />
+      <main>
+        <BlogPosts posts={posts} />
+      </main>
+    </>
   );
 }
