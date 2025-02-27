@@ -2,11 +2,14 @@ export const clerkConfig = {
   // Routes that can be accessed while signed out
   publicRoutes: [
     "/",
-    "/:locale/sign-in(.*)",
-    "/:locale/sign-up(.*)",
+    "/sign-in(.*)",
+    "/sign-up(.*)",
     "/api/webhooks(.*)",
     "/api/stripe(.*)",
-    "/api/uploadthing"
+    "/api/uploadthing",
+    // Add locale variations
+    "/:locale/sign-in(.*)",
+    "/:locale/sign-up(.*)",
   ],
   // Routes that can always be accessed, and have
   // no authentication information
