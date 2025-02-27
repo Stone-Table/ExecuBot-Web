@@ -15,6 +15,7 @@ import { TailwindIndicator } from "~/components/tailwind-indicator";
 import { ThemeProvider } from "~/components/theme-provider";
 import { i18n } from "~/config/i18n-config";
 import { siteConfig } from "~/config/site";
+import { OrganizationJsonLd, WebsiteJsonLd } from "~/components/structured-data";
 
 // import { Suspense } from "react";
 // import { PostHogPageview } from "~/config/providers";
@@ -41,20 +42,21 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "Shadcn ui",
-    "Sass",
-    "Fast ",
-    "Simple ",
-    "Easy",
-    "Cloud Native",
+    "Engineering management",
+    "Developer productivity",
+    "Technical leadership",
+    "Engineering metrics",
+    "Team performance",
+    "Software development",
+    "Engineering analytics",
+    "Developer efficiency",
   ],
   authors: [
     {
-      name: "saasfly",
+      name: "ExecuBot",
     },
   ],
-  creator: "Saasfly",
+  creator: "ExecuBot",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -62,13 +64,31 @@ export const metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@execubot",
   },
   icons: {
     icon: "/logo.svg",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
-  metadataBase: new URL("https://show.saasfly.io/"),
+  metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: siteConfig.url,
+  },
   // manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
@@ -80,7 +100,10 @@ export default function RootLayout({
   return (
     <ClerkProvider waitlistUrl="/">
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          <WebsiteJsonLd />
+          <OrganizationJsonLd />
+        </head>
         {/*<Suspense>*/}
         {/*  <PostHogPageview />*/}
         {/*</Suspense>*/}
