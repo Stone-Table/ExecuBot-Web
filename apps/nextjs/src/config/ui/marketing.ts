@@ -25,7 +25,7 @@ export const getMarketingConfig = async ({
       },
       {
         title: "Chat",
-        href: `/${lang}/chat`,
+        href: "/chat",
       },
       // {
       //   title: "Documentation",
