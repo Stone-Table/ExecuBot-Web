@@ -119,7 +119,7 @@ export default function Home() {
     console.log('Sending payload:', payload);
 
     try {
-      const response = await fetch("http://localhost:8000/api/chat", {
+      const response = await fetch("http://16.170.240.165/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -156,7 +156,7 @@ export default function Home() {
     e.preventDefault();
     setIsSubmittingKeys(true);
     try {
-      const response = await fetch("http://localhost:8000/api/keys", {
+      const response = await fetch("http://16.170.240.165/api/keys", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
